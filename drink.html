@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+		<title>Hydrate Me</title>
+		<link rel="stylesheet" href="css/drink.css" type="text/css" media="screen">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	    <!--<script src="//code.jquery.com/jquery-1.9.1.js"></script>-->
+	    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"> -->
+	</head>
+	<body>
+		<div id="drinks">
+		<!-- COFEE -->
+			<div id="coffee">
+				<div id="coffeeimg">
+					<img src="img/coffee.png" height= "60%" width="60%">
+					<p>Coffee</p>
+				</div>
+
+				<div id="coffee-right">
+					<div id="coffeesize" style="display: none;">
+						<div class="size"><img src="img/coffee.png" height= "60%" width="60%"></div>
+						<div class="size"><img src="img/coffee.png" height= "80%" width="80%"></div>
+						<div class="size"><img src="img/coffee.png" height= "100%" width="100%"></div>
+					</div>
+					
+					<div id="coffeeslider" style="display: none;">
+						<p>Number of cup(s):  <span id="slider-value-coffee"></span></p>
+						<button type="button">Submit</button>
+	 				</div>
+	 			</div>
+
+			</div>
+		
+		<!-- TEA -->
+			<div id="tea">
+				<div id="teaimg">
+					<img src="img/tea.png" height= "60%" width="60%"> 
+					<p>Tea</p>
+				</div>
+
+				<div id="tea-right">
+					<div id="teasize" style="display: none;">
+						<div class="size"> <img src="img/tea.png" height= "60%" width="60%"> </div>
+						<div class="size"><img src="img/tea.png" height= "80%" width="80%"></div>
+						<div class="size"><img src="img/tea.png" height= "100%" width="100%"></div>
+					</div>
+
+					<div id="teaslider" style="display: none;">
+						<p>Number of cup(s):  <span id="slider-value-tea"></span></p>
+						<button type="button">Submit</button>
+	 				</div>
+ 				</div>
+			</div>
+			
+		<!-- SODA -->
+			<div id="soda">
+				<div id="sodaimg">
+					<img src="img/soda.png" height= "60%" width="60%">
+					<p>Soda</p>
+				</div>
+
+				<div id="soda-right">
+					<div id="sodasize" style="display: none;">
+						<div class="size"><img src="img/soda.png" height= "60%" width="60%"></div>
+						<div class="size"><img src="img/soda.png" height= "80%" width="80%"></div>
+						<div class="size"><img src="img/soda.png" height= "100%" width="100%"></div>
+					</div>
+				
+					<div id="sodaslider" style="display: none;">
+						<p>Number of cup(s):  <span id="slider-value-soda"></span></p>
+						<button type="button">Submit</button>
+	 				</div>
+	 			</div>
+			</div>
+			
+		<!-- WATER -->
+			<div id="water">
+				<div id="waterimg">
+					<img src="img/water.png" height= "60%" width="60%">
+					<p>Water</p>
+				</div>
+
+				<div id="water-right">
+					<div id="watersize" style="display: none;">
+						<div class="size"><img src="img/water.png" height= "60%" width="60%"></div>
+						<div class="size"><img src="img/water.png" height= "80%" width="80%"></div>
+						<div class="size"><img src="img/water.png" height= "100%" width="100%"></div>
+					</div>
+					
+					<div id="waterslider" style="display: none;">
+						<p>Number of cup(s):  <span id="slider-value-water"></span></p>
+						<button type="button">Submit</button>
+	 				</div>
+	 			</div>
+			</div>	
+				
+		</div>
+
+ 
+
+		<script>
+		$(document).ready(function() {
+			  $('#coffeeimg').click(function() {
+                $('#coffeesize').slideToggle("fast");
+                $('#teasize').hide("fast");
+                $('#sodasize').hide("fast");
+                $('#watersize').hide("fast");
+
+                $('#coffeeslider').hide();
+                $('#teaslider').hide();
+				$('#sodaslider').hide();
+				$('#waterslider').hide();
+        		});
+
+			  $('#teaimg').click(function() {
+                $('#teasize').slideToggle("fast");
+                $('#coffeesize').hide("fast");
+                $('#sodasize').hide("fast");
+                $('#watersize').hide("fast");
+
+                $('#coffeeslider').hide();
+                $('#teaslider').hide();
+				$('#sodaslider').hide();
+				$('#waterslider').hide();
+        		});
+
+			  $('#sodaimg').click(function() {
+                $('#sodasize').slideToggle("fast");
+                $('#coffeesize').hide("fast");
+                $('#teasize').hide("fast");
+                $('#watersize').hide("fast");
+
+                $('#coffeeslider').hide();
+                $('#teaslider').hide();
+				$('#sodaslider').hide();
+				$('#waterslider').hide();
+        		});
+
+			  $('#waterimg').click(function() {
+                $('#watersize').slideToggle("fast");
+                $('#teasize').hide("fast");
+                $('#sodasize').hide("fast");
+                $('#coffeesize').hide("fast");
+                
+                $('#coffeeslider').hide();
+                $('#teaslider').hide();
+				$('#sodaslider').hide();
+				$('#waterslider').hide();
+        		});
+		});			
+
+// --------slider--------
+		$('#coffeesize').click(function(){
+			$('#coffeeslider').slideToggle("fast");
+			$('#teaslider').hide();
+			$('#sodaslider').hide();
+			$('#waterslider').hide();
+		});
+
+		$('#teasize').click(function(){
+			$('#teaslider').slideToggle("fast");
+			$('#sodaslider').hide();
+			$('#waterslider').hide();
+			$('#coffeeslider').hide();
+		});
+
+		$('#sodasize').click(function(){
+			$('#sodaslider').slideToggle("fast");
+			$('#teaslider').hide();
+			$('#coffeeslider').hide();
+			$('#waterslider').hide();
+		});
+
+		$('#watersize').click(function(){
+			$('#waterslider').slideToggle("fast");
+			$('#teaslider').hide();
+			$('#sodaslider').hide();
+			$('#coffeeslider').hide();
+		});
+
+
+//------number of cups + slider---------
+
+
+		$("#coffeeslider").slider(
+			{
+            value:1,
+            min: 0,
+            max: 5,
+            step: 1,
+            slide: function( event, ui ) {
+                $( "#slider-value-coffee" ).html( ui.value );
+            	}
+			}
+		);
+
+		$( "#slider-value-coffee" ).html(  $('#coffeeslider').slider('value') );
+
+
+
+		$("#teaslider").slider(
+			{
+            value:1,
+            min: 0,
+            max: 5,
+            step: 1,
+            slide: function( event, ui ) {
+                $( "#slider-value-tea" ).html( ui.value );
+            	}
+			}
+		);
+
+		$( "#slider-value-tea" ).html(  $('#teaslider').slider('value') );
+
+
+		$("#sodaslider").slider(
+			{
+            value:1,
+            min: 0,
+            max: 5,
+            step: 1,
+            slide: function( event, ui ) {
+                $( "#slider-value-soda" ).html( ui.value );
+            	}
+			}
+		);
+
+		$( "#slider-value-soda" ).html(  $('#sodaslider').slider('value') );
+
+
+
+		$("#waterslider").slider(
+			{
+            value:1,
+            min: 0,
+            max: 5,
+            step: 1,
+            slide: function( event, ui ) {
+                $( "#slider-value-water" ).html( ui.value );
+            	}
+			}
+		);
+
+		$( "#slider-value-water" ).html(  $('#waterslider').slider('value') );
+
+		</script>
+	</body>
+</html>
